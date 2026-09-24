@@ -30,3 +30,10 @@ Video, offline downloads, notifications and counselling are simulations. No appl
 JavaScript syntax and every screen renderer were checked in a JavaScript VM, including all 72 course lesson/tab combinations. Interaction checks covered idempotent lesson completion, saved courses/resources/opportunities, downloads, poll votes, idea support, check-ins, goals, replies, profile edits, logout/session restoration and localStorage serialization. Signup/login validation was also exercised.
 
 Browser automation was unavailable in this environment. Visual review at 390px, real DOM interaction, mobile scrolling and screen-reader behavior remain unverified. CSS includes a 420px desktop shell, full-width mobile layout, fixed-navigation clearance, visible focus styles and reduced-motion support.
+
+
+## September visual refinement
+
+The app now uses a full-height flex shell: the main content scrolls independently above an opaque, bottom-docked navigation bar. Home, Learn, Quick Actions, Wellbeing, Community and Profile each occupy their own grid column. Safe-area padding is included in the bar. New reference-inspired student artwork replaces the SVG placeholder in onboarding, home, lessons and profile. Home and Learning Hub use more compact layouts. User-facing demo labels have been replaced with product wording, while unavailable services and illustrative opportunities remain explicitly described.
+
+Validation: JavaScript syntax, 90 rendered screen/tab states, six navigation controls, artwork references and absence of demo/prototype labels in rendered main screens passed. Browser visual QA remains unavailable in this environment.
