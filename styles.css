@@ -48,13 +48,13 @@ input,textarea,select{border-color:#11182709;border-radius:14px;box-shadow:0 3px
 @media(prefers-reduced-motion:no-preference){.card,.btn,.icon-button{transition:background .2s,transform .2s}.btn:active,.icon-button:active{transform:scale(.97)}}
 
 /* Requested centred Home navigation and illustrated page headers. */
-#nav{grid-template-columns:repeat(5,minmax(0,1fr));min-height:80px;padding-top:10px;border-radius:27px 27px 0 0;overflow:visible}
+#nav{grid-template-columns:repeat(5,minmax(0,1fr));min-height:80px;padding-top:10px;border-radius:0;overflow:visible}
 #nav .nav-item{position:relative;min-height:57px;gap:5px}
 #nav .nav-home{padding-top:33px}
 #nav .nav-home>span{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:68px;height:68px;border:7px solid var(--off-white);background:var(--yellow);border-radius:50%;box-shadow:0 5px 12px #11182710}
 #nav .nav-home .icon{width:27px;height:27px;stroke-width:2}
 #nav .nav-home.active>span{background:var(--yellow)}
-#nav .nav-home.active .icon{fill:var(--white);stroke:var(--black)}
+#nav .nav-home.active .icon{fill:none;stroke:var(--black)}
 .has-nav #screen{padding-bottom:48px}
 .landing-header,.wellbeing-header{margin:-3px 0 21px}
 .landing-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
@@ -70,3 +70,13 @@ input,textarea,select{border-color:#11182709;border-radius:14px;box-shadow:0 3px
 .onboarding-controls .btn:has(.small){font-size:14px}
 .onboarding-controls .btn .icon{width:18px;height:18px}
 @media(max-width:359px){.illustrated-heading h1,.wellbeing-header .illustrated-heading h1{font-size:24px}.illustrated-heading>img{height:175px}.illustrated-heading p{font-size:11px}.onboarding-controls .btn{font-size:12px;padding:12px 9px}}
+
+/* Home-only motion; the navigation layout remains stationary. */
+@media(prefers-reduced-motion:no-preference){
+ #nav .nav-home>span{animation:home-welcome 550ms ease-out;transition:transform 200ms ease,box-shadow 200ms ease}
+ #nav .nav-home:hover>span,#nav .nav-home:focus-visible>span{transform:translateX(-50%) translateY(-3px);box-shadow:0 8px 16px #11182718}
+ #nav .nav-home:active>span{transform:translateX(-50%) scale(.92)}
+ #nav .nav-home.active .icon{animation:home-breathe 3s ease-in-out infinite}
+}
+@keyframes home-welcome{0%{transform:translateX(-50%) scale(.88)}60%{transform:translateX(-50%) scale(1.05)}100%{transform:translateX(-50%) scale(1)}}
+@keyframes home-breathe{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
