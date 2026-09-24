@@ -46,3 +46,27 @@ input,textarea,select{border-color:#11182709;border-radius:14px;box-shadow:0 3px
 @media(min-width:900px){.app{height:100dvh;min-height:0;margin:0 auto;border:1px solid #1118270b;border-bottom:0;border-top:0;border-radius:0}#screen{min-height:0}#nav{bottom:auto}.desktop-note{top:35%}}
 @media(max-width:359px){#screen{padding-left:16px;padding-right:16px}.nav-item,.quick-label{font-size:9px}.quick>span:first-child{width:40px;height:40px}#nav{padding-left:3px;padding-right:3px}.home-heading h1{font-size:20px}.feature{min-height:90px}.onboarding>img{width:calc(100% + 32px);margin-left:-16px;margin-right:-16px}}
 @media(prefers-reduced-motion:no-preference){.card,.btn,.icon-button{transition:background .2s,transform .2s}.btn:active,.icon-button:active{transform:scale(.97)}}
+
+/* Requested centred Home navigation and illustrated page headers. */
+#nav{grid-template-columns:repeat(5,minmax(0,1fr));min-height:80px;padding-top:10px;border-radius:27px 27px 0 0;overflow:visible}
+#nav .nav-item{position:relative;min-height:57px;gap:5px}
+#nav .nav-home{padding-top:33px}
+#nav .nav-home>span{position:absolute;top:-40px;left:50%;transform:translateX(-50%);width:68px;height:68px;border:7px solid var(--off-white);background:var(--yellow);border-radius:50%;box-shadow:0 5px 12px #11182710}
+#nav .nav-home .icon{width:27px;height:27px;stroke-width:2}
+#nav .nav-home.active>span{background:var(--yellow)}
+#nav .nav-home.active .icon{fill:var(--white);stroke:var(--black)}
+.has-nav #screen{padding-bottom:48px}
+.landing-header,.wellbeing-header{margin:-3px 0 21px}
+.landing-top{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.landing-top .wordmark{font-size:27px}.header-actions{display:flex;gap:6px}.header-actions .icon-button{width:40px;height:40px}
+.illustrated-heading{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);align-items:center;margin-top:8px;min-height:174px;position:relative;isolation:isolate}
+.illustrated-heading>div{position:relative;z-index:1}.illustrated-heading h1{font-size:27px;line-height:1.18;overflow-wrap:anywhere}.illustrated-heading p{font-size:12px;line-height:1.65;margin-top:9px}.header-caption{display:block;font-size:13px;font-weight:600;line-height:1.6;margin-top:17px}
+.illustrated-heading>img{display:block;width:calc(100% + 20px);height:190px;object-fit:cover;object-position:center;margin-right:-20px;mix-blend-mode:multiply;border-radius:0 0 18px 18px}
+.wellbeing-header .illustrated-heading{margin-top:3px}.wellbeing-header .illustrated-heading h1{font-size:27px}.wellbeing-header .text-button{display:flex;align-items:center;gap:6px;font-size:11px;font-weight:650;text-decoration:none;text-align:left;padding:0;margin-top:9px}.wellbeing-header .text-button .icon{width:16px;height:16px}
+.growth-card{min-height:137px}.growth-card>div{width:100%}.growth-card p br{display:none}.growth-card .text-button{margin-top:5px}
+.onboarding-footer{flex-direction:column;gap:25px;margin-top:28px;padding:0}
+.onboarding-controls{display:flex;gap:12px;width:100%;align-items:center}
+.onboarding-controls .btn,.onboarding-controls .btn:not(:has(svg)){flex:1;width:auto;min-width:0;min-height:48px;height:auto;margin:0;padding:12px 13px;border-radius:14px;font-size:14px}
+.onboarding-controls .btn:has(.small){font-size:14px}
+.onboarding-controls .btn .icon{width:18px;height:18px}
+@media(max-width:359px){.illustrated-heading h1,.wellbeing-header .illustrated-heading h1{font-size:24px}.illustrated-heading>img{height:175px}.illustrated-heading p{font-size:11px}.onboarding-controls .btn{font-size:12px;padding:12px 9px}}
