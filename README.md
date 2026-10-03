@@ -37,3 +37,14 @@ Browser automation was unavailable in this environment. Visual review at 390px, 
 The app now uses a full-height flex shell: the main content scrolls independently above an opaque, bottom-docked navigation bar. Home, Learn, Quick Actions, Wellbeing, Community and Profile each occupy their own grid column. Safe-area padding is included in the bar. New reference-inspired student artwork replaces the SVG placeholder in onboarding, home, lessons and profile. Home and Learning Hub use more compact layouts. User-facing demo labels have been replaced with product wording, while unavailable services and illustrative opportunities remain explicitly described.
 
 Validation: JavaScript syntax, 90 rendered screen/tab states, six navigation controls, artwork references and absence of demo/prototype labels in rendered main screens passed. Browser visual QA remains unavailable in this environment.
+
+
+## Admin frontend
+
+Open `admin.html` directly, or visit http://127.0.0.1:8080/admin.html with the server above. The responsive desktop/mobile portal reuses the youth app palette, illustration and SVG icon paths. Source: `admin.html`, `admin.css`, `admin-icons.js`, `admin.js`; copies are included in `dist/`.
+
+Includes all ten admin sections, searchable and filterable users, referral board and case editing, moderation decisions and notes, course/resource/opportunity editing, CSV exports, local audit history, and five role previews. The account button switches roles; signing out opens the demo entry screen. Changes persist separately from the youth app in localStorage.
+
+This is a frontend prototype with fictional records and illustrative September 2026 analytics. Role previews are not authentication or backend authorization. Settings are stored demo preferences; no real notifications, emergency alerts, referrals or publishing occur. Secure storage, real analytics, retention, lesson delivery and production consent workflows require backend integration. Do not enter sensitive information.
+
+Validation: JavaScript syntax and 50 role/screen combinations passed in a Node VM, along with search/status/school filters, edit-form rendering and restricted-route fallback. Browser visual/mobile verification could not be completed because no connected browser was available.
